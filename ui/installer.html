@@ -1,0 +1,80 @@
+
+<html>
+  <head>
+      <title>Silbot Installer</title>
+      <link rel = "stylesheet"
+      type = "text/css"
+      href = "https://raw.silveros.it/installer/html/releases/0.1/material.css" />
+      <script>
+          function toggle() {
+              if (document.getElementById('dbcheck').checked) {
+                  document.getElementById('mysql-host').readOnly=false;
+                  document.getElementById('mysql-user').readOnly=false;
+                  document.getElementById('mysql-password').readOnly=false;
+                  document.getElementById('mysql-database').readOnly=false;
+                  document.getElementById('mysql-universal').readOnly=false;
+                  document.getElementById('mysql-table').readOnly=false;
+              } else {
+                document.getElementById('mysql-host').readOnly=true;
+                  document.getElementById('mysql-user').readOnly=true;
+                  document.getElementById('mysql-password').readOnly=true;
+                  document.getElementById('mysql-database').readOnly=true;
+                  document.getElementById('mysql-universal').readOnly=true;
+                  document.getElementById('mysql-table').readOnly=true;
+              }
+          }
+      </script>
+  
+  </head>
+  
+  
+  <body>
+      <div class="container" >
+          <form action="installer.php" name="form" method="POST">
+            <h1>Silbot Installer v0.1</h1>
+            <div class="form-group">
+              <input type="text" id="token" name="token"/>
+              <label for="input" class="control-label">Bot Token</label><i class="bar"></i>
+            </div>
+            <div class="form-group">
+              <input type="text" id="dir" name="dirto"/>
+              <label for="input" class="control-label">Directory</label><i class="bar"></i>
+            </div>
+            <label style="float:left;padding-top:5px;font-size: 20px;padding-right: 10px;">Database</label><label class="switch">
+              <input type="checkbox" id="dbcheck" name="dbact" checked onclick="toggle()">
+              <span class="slider round"></span>
+            </label>
+  
+            <div class="form-group">
+              <input type="text" id="mysql-host" name="ip"/>
+              <label for="input" class="control-label">MySQL IP</label><i class="bar"></i>
+            </div>
+            <div class="form-group">
+              <input type="text" id="mysql-user" name="user"/>
+              <label for="input" class="control-label">MySQL User</label><i class="bar"></i>
+            </div>
+            <div class="form-group">
+              <input type="password" id="mysql-password" name="password"/>
+              <label for="input" class="control-label">MySQL password</label><i class="bar"></i>
+            </div>
+            <div class="form-group">
+              <input type="text" id="mysql-database" name="db_name"/>
+              <label for="input" class="control-label">MYSQL Database Name</label><i class="bar"></i>
+            </div>
+            <div class="form-group">
+              <input type="text" id="mysql-universal" name="universal"/>
+              <label for="input" class="control-label">MYSQL Universal table name</label><i class="bar"></i>
+            </div>
+            <div class="form-group">
+              <input type="text" id="mysql-table" name="bot"/>
+              <label for="input" class="control-label">MYSQL Bot table name</label><i class="bar"></i>
+            </div>
+  
+            <div class="button-container"> 
+              <button type="button" class="button" onclick="document.form.submit();"><span>Install</span></button> 
+            </div>
+          </form>
+        </div>
+  </body>
+  
+  </html>
