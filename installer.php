@@ -1,10 +1,10 @@
 <?php
-$password = 'PutHereAVeryStrongPassword';
+$filepassword = 'PutHereAVeryStrongPassword';
 if (($_SERVER['HTTPS'] != 'on') && (isset($_SERVER['HTTP_X_FORWARDED_PROTO']) && $_SERVER['HTTP_X_FORWARDED_PROTO'] != 'https')) {
     die('You have to visit the installer from HTTPS protocol');
 }
-if (isset($_POST['token']) && isset($_POST['dirto']) && isset($_POST['password'])) {
-    if ($_POST['password'] != $password) {
+if (isset($_POST['token']) && isset($_POST['dirto']) && isset($_POST['filepassword'])) {
+    if ($_POST['filepassword'] != $filepassword) {
         die('Wrong password');
     }
     $token = $_POST['token'];
