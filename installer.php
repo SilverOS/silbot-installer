@@ -69,9 +69,9 @@ if (isset($_POST['token']) && isset($_POST['filepassword']) && isset($_POST['dir
                     $universal,
                     $bot,
                 ];
-                file_put_contents($dirto . '/config.php', str_replace($torep, $rep, sendRequest('https://raw.silveros.it/silbot/releases/1.4.1/' . $file)));
+                file_put_contents($dirto . '/config.php', str_replace($torep, $rep, sendRequest('https://raw.silveros.it/silbot/releases/'.$version.'/' . $file)));
             } else {
-                copy('https://raw.silveros.it/silbot/releases/'.$installerVersion.'/' . $file, $dirto . '/' . $file);
+                copy('https://raw.silveros.it/silbot/releases/'.$version.'/' . $file, $dirto . '/' . $file);
             }
         }
     }
